@@ -41,17 +41,17 @@ write_files:
       update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.10 1
       # Note: this breaks Ubuntu subtly, so make sure to run all apt installs previously
 
-      echo "--> Setting up scratch"
-      # Make sure we can write to the temporary SSD storage
-      mkdir -p /mnt/scratch
-      chmod a+w /mnt/scratch
+      # echo "--> Setting up scratch"
+      # # Make sure we can write to the temporary SSD storage
+      # mkdir -p /mnt/scratch
+      # chmod a+w /mnt/scratch
       
-      # Everything from here on down is run as a regular user
-      sudo -i -u ${ADMIN_USERNAME} bash << EOF
-      echo "--> Setting up cache"
-      rm -rf ~/.cache
-      mkdir -p /mnt/scratch/.cache
-      ln -s /mnt/scratch/.cache ~/.cache
+      # # Everything from here on down is run as a regular user
+      # sudo -i -u ${ADMIN_USERNAME} bash << EOF
+      # echo "--> Setting up cache"
+      # rm -rf ~/.cache
+      # mkdir -p /mnt/scratch/.cache
+      # ln -s /mnt/scratch/.cache ~/.cache
 
       echo "--> Cloning repositories"
       bash <(wget -qO- https://raw.githubusercontent.com/AUTOMATIC1111/stable-diffusion-webui/master/webui.sh)
@@ -199,6 +199,6 @@ packages:
   - wget
   
 runcmd:
-  - systemctl enable spot-helper
+  # - systemctl enable spot-helper
   - /root/preflight.sh
   - reboot
