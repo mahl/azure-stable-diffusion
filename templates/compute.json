@@ -25,11 +25,13 @@
     },
     "instanceSize": {
       "type": "string",
-      "defaultValue": "Standard_NV6_Promo",
+      "defaultValue": "Standard_NC6_Promo",
       "metadata": {
         "description": "instance instance size"
       },
       "allowedValues": [
+        "Standard_NC6",
+        "Standard_NC6_Promo",
         "Standard_NV6",
         "Standard_NV6_Promo",
         "Standard_NV6ads_A10_v5"
@@ -162,10 +164,10 @@
       "location": "[resourceGroup().location]",
       "properties": {
         "priority": "[parameters('instancePriority')]",
-        "evictionPolicy": "Deallocate",
-        "billingProfile": {
-          "maxPrice": -1
-        },
+        // "evictionPolicy": "Deallocate",
+        // "billingProfile": {
+        //   "maxPrice": -1
+        // },
         "osProfile": {
           "computerName": "[parameters('instancePrefix')]",
           "adminUsername": "[parameters('adminUsername')]",
