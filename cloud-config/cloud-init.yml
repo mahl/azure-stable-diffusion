@@ -48,9 +48,9 @@ write_files:
       
       # Everything from here on down is run as a regular user
       sudo -i -u ${ADMIN_USERNAME} bash << EOF
-      # echo "--> Setting up cache"
-      # rm -rf ~/.cache
-      # mkdir -p /mnt/scratch/.cache
+      echo "--> Setting up cache"
+      rm -rf ~/.cache
+      mkdir -p /mnt/scratch/.cache
       # ln -s /mnt/scratch/.cache ~/.cache
 
       echo "--> Cloning repositories"
@@ -65,7 +65,7 @@ write_files:
       source ~/stable-diffusion-webui/venv/bin/activate
 
       echo "--> Downloading Huggingface data"
-      cd ~/.cache
+      cd /mnt/scratch
       git init
       git lfs install --skip-repo
       git config core.sparsecheckout true
