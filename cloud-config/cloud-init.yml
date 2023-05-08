@@ -101,6 +101,9 @@ write_files:
       cd ~/stable-diffusion-webui
       git clone https://github.com/yfszzx/stable-diffusion-webui-images-browser extensions/stable-diffusion-webui-images-browser
       git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui-aesthetic-gradients extensions/aesthetic-gradients
+      git clone https://github.com/pharmapsychotic/clip-interrogator-ext extensions/clip-interrogator-ext
+      git clone https://github.com/vladmandic/sd-extension-system-info extensions/sd-extension-system-info
+      git clone https://github.com/Mikubill/sd-webui-controlnet.git extensions/sd-webui-controlnet
       EOF
 
       echo "==> Preflight done."
